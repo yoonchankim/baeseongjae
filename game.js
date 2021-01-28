@@ -1,4 +1,5 @@
-const span=document.querySelector("span");
+const span=document.querySelector(".click");
+const rSpan=document.querySelector(".opacity");
 const left=document.querySelector(".left-div");
 const right=document.querySelector(".right-div");
 const img=document.querySelector(".img");
@@ -7,10 +8,12 @@ function leftClick(event) {
     img.src="baeseongjae1(right).jpg";
     click++;
     localStorage.setItem("click",click);
+    rSpan.classList.add("animationLeft");
     if(click%100===0){
         alert("Congratulations! You clicked "+JSON.stringify(click));
     }
     setTimeout(function(){ img.src="baeseongjae2(right).jpg";
+    rSpan.classList.remove("animationLeft");
 }, 2380);
 }
 function leftHover(event) {
@@ -20,10 +23,13 @@ function rightClick(event) {
     img.src="baeseongjae1(left).jpg";
     click++;
     localStorage.setItem("click",click);
+    rSpan.classList.add("animationRight");
     if(click%100===0){
         alert("Congratulations! You clicked "+JSON.stringify(click));
     }
-    setTimeout(function(){ img.src="baeseongjae2(left).jpg";}, 2380);
+    setTimeout(function(){ img.src="baeseongjae2(left).jpg";
+    rSpan.classList.remove("animationRight");
+}, 2380);
 }
 function rightHover(event) {
     img.src="baeseongjae2(left).jpg";

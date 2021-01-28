@@ -4,22 +4,30 @@ const span=document.querySelector("span");
 const left=document.querySelector(".left-div");
 const right=document.querySelector(".right-div");
 const img=document.querySelector(".img");
-let message="";
+let message="POP";
 function handleSubmit(event) {
     event.preventDefault();
     message = input.value;
-    span.innerText=message;
+    input.value="";
 }
 function leftClick(event) {
     img.src="baeseongjae1(right).jpg";
-    setTimeout(function(){ img.src="baeseongjae2(right).jpg";}, 2380);  
+    span.innerText=message;
+    span.classList.add("animationLeft");
+    setTimeout(function(){ img.src="baeseongjae2(right).jpg";
+    span.classList.remove("animationLeft");
+}, 2380);  
 }
 function leftHover(event) {
     img.src="baeseongjae2(right).jpg";
 }
 function rightClick(event) {
     img.src="baeseongjae1(left).jpg";
-    setTimeout(function(){ img.src="baeseongjae2(left).jpg";}, 2380);}
+    span.innerText=message;
+    span.classList.add("animationRight");
+    setTimeout(function(){ img.src="baeseongjae2(left).jpg";
+    span.classList.remove("animationRight");
+}, 2380);}
 function rightHover(event) {
     img.src="baeseongjae2(left).jpg";
 }
