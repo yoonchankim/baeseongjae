@@ -4,6 +4,7 @@ const span=document.querySelector("span");
 const left=document.querySelector(".left-div");
 const right=document.querySelector(".right-div");
 const img=document.querySelector(".img");
+const cute=document.querySelector("audio");
 let message="POP";
 function handleSubmit(event) {
     event.preventDefault();
@@ -14,6 +15,7 @@ function leftClick(event) {
     img.src="baeseongjae1(right).jpg";
     span.innerText=message;
     span.classList.add("animationLeft");
+    cute.play();
     setTimeout(function(){ img.src="baeseongjae2(right).jpg";
     span.classList.remove("animationLeft");
 }, 2380);  
@@ -25,6 +27,7 @@ function rightClick(event) {
     img.src="baeseongjae1(left).jpg";
     span.innerText=message;
     span.classList.add("animationRight");
+    cute.play();
     setTimeout(function(){ img.src="baeseongjae2(left).jpg";
     span.classList.remove("animationRight");
 }, 2380);}
